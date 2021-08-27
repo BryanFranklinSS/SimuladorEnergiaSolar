@@ -118,17 +118,36 @@
       clear: both;
       width: 100%;
     }
-    .row-3 {
+    .container-custom {
       content: "";
       display: table;
       clear: both;
-      width: 93%;
-      padding: 16px;
-      margin-left: 25px;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      background: linear-gradient(#3C86ED, #FACE35);
-      
+      height: 200px;
+      width: 80%;
+      padding-left: 6%;
+      padding-right: 6%;
+      padding-top: 2%;
+      margin-left: 110px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      background: linear-gradient(#1B67D4, #1B67D4);
+      /*box-shadow: 0 0 1em rgb(42, 75, 184);*/       
+    }
+
+    .text-input{
+      padding-top: 6px;
+      border: 2px solid #a0d1ff;
+      border-radius: 10px;
+      background: transparent;
+      opacity: 0.5;
+      width: 40%;
+
+    }
+    .text-input:focus{
+      border: 2px solid #a0d1ff;
+      border-radius: 10px;
+      background: #a0d1ff;
+
     }
 
   </style>
@@ -138,11 +157,24 @@
 
 <div class="container" style="margin-top: 10px;">
   <div class="container" style="background: linear-gradient(#468FF5, #1865d1); border-radius: 16px;">
-    <div class="row" style="margin-left:15px;">
-      <div class="container-fluid" style="background: linear-gradient(#FACE35 ,#3C86ED); border-top-left-radius: 15px; border-top-right-radius: 15px;" >
-        <h2 style="text-align:center;color: #1B67D4; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Simule sua conta de energia com nosso sistema</h2>
+    <div class="row" style="margin-left: 15px;">
+      <div class="container-fluid" style="background: linear-gradient(#face08 ,#FACE35); border-radius: 15px;" >
+        <h2 style="text-align:center; color: #1B67D4; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Simule sua conta de energia com nosso sistema</h2>
       </div>
     </div>
+
+    <div class="container-custom">
+      <div class="row-2">
+        
+      </div>
+      <div class="row-2">
+      </div>
+      <div class="row-2">
+      </div>
+      <div class="row-2">
+      </div>   
+    </div>
+
 
     <div class="container">
       <div class="row-padrao">
@@ -157,7 +189,7 @@
 
           <div class="container-fluid">
             <div class="row-padrao" style="background-color: #f8e6a5;">
-              <div class="column-2" style="border: black solid 1px;">
+              <div class="column-2" style="border: black solid 1px; ">
                 <p style="font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">CONTA REFERENTE A:</p>
                 <p style="font-size: 80%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">-</p>
               </div>
