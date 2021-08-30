@@ -150,6 +150,23 @@
 
     }
 
+    .select-input{
+      padding-top: 6px;
+      border: 2px solid #a0d1ff;
+      border-radius: 10px;
+      background: transparent;
+      opacity: 0.5;
+      width: 40%;
+
+    }
+    .select-input:focus{
+      border: 2px solid #a0d1ff;
+      border-radius: 10px;
+      background: #a0d1ff;
+
+    }
+    
+
   </style>
 
 </head>
@@ -164,15 +181,41 @@
     </div>
 
     <div class="container-custom">
-      <div class="row-2">
-        
-      </div>
-      <div class="row-2">
-      </div>
-      <div class="row-2">
-      </div>
-      <div class="row-2">
-      </div>   
+        <div class="row-2" style="margin-bottom: 40px; margin-left: 90px;">
+          <div class="column-2" style="text-align: left;">
+            <label for="consumo">Consumo:</label><br>
+            <input class="text-input" type="text" name="consumo" id="consumo" inputmode="numeric" style="width: 40%; margin-left: 20px;">
+          </div>
+          <div class="column-2" style="text-align: left;">
+            <label for="cip">Cip-Ilum Pub Pref Munic:</label><br>
+            <input class="text-input" type="text" name="cip" id="cip" inputmode="numeric" style="width: 40%; margin-left: 20px">
+          </div>
+        </div>
+        <div class="row-2" style="margin-left: 90px;">
+          <div class="column-2" style="text-align: left;">
+            <label for="estado">Estado:</label><br>
+            <select class="select-input" name="estado" id="estado" style="margin-left: 20px">
+              <option value="" selected>selecione o Estado</option>
+              <option value="Pa">Pará</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="Go">Goiás</option>
+            </select>
+          </div>
+          <div class="column-2" style="text-align: left;">
+            <label for="fase">Fase do seu sistema:</label><br>
+            <select class="select-input" name="fase" id="fase" style="margin-left: 20px">
+              <option value="" selected>selecione a fase</option>
+              <option value="mono">Monofásico</option>
+              <option value="bi">Bifásico</option>
+              <option value="tri">Trifásico</option>
+            </select>
+          </div>
+        </div>
+        <div class="row-2" style="text-align: center; padding: 20px;">       
+          <button type="button" class="button" onclick="simular();">gerar simulação</button>
+        </div>
+      
+   
     </div>
 
 
@@ -234,13 +277,13 @@
                   <p style="font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;"></p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c1_consumo" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">0.0</p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c1_preco" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">0.0</p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c1_valor_consumo" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">0.0</p>
                 </div>
               </div>
 
@@ -258,9 +301,10 @@
                   <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;"></p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c1_cip" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">0.0</p>
                 </div>
               </div>
+              <div class="row"></div>
               <div class="row"></div>
 
               <div class="row-2">
@@ -268,7 +312,7 @@
                   <p style="text-align: left; font-size: 120%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Total a Pagar - Sem Energia Solar</p>
                 </div>
                 <div class="column-26" style="border: black solid 1px; margin-bottom: 10px; border-radius: 7px;">
-                  <p style="font-family: Arial, Helvetica, sans-serif;">output</p>
+                  <p id="saida1" style="font-family: Arial, Helvetica, sans-serif;">output</p>
                 </div>
               </div>
 
@@ -335,13 +379,49 @@
                   <p style="font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;"></p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c2_consumo" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">aa</p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c2_preco" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">aa</p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c2_valor_consumo" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">aa</p>
+                </div>
+              </div>
+
+              <div class="row-2">
+                <div class="column-26">
+                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">Consumo Isento</p>
+                </div>
+                <div class="column-15">
+                  <p style="font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;"></p>
+                </div>
+                <div class="column-15">
+                  <p id="c2_consumo_isento" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                </div>
+                <div class="column-15">
+                  <p id="c2_consumo_isento_preco" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                </div>
+                <div class="column-15">
+                  <p id="c2_consumo_isento_valor" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                </div>
+              </div>
+
+              <div class="row-2">
+                <div class="column-26">
+                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">Devolução de Geração</p>
+                </div>
+                <div class="column-15">
+                  <p style="font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;"></p>
+                </div>
+                <div class="column-15">
+                  <p id="c2_devolucao_geracao" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">aaaaa</p>
+                </div>
+                <div class="column-15">
+                  <p id="c2_devolucao_geracao_preco" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                </div>
+                <div class="column-15">
+                  <p id="c2_devolucao_geracao_valor" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
                 </div>
               </div>
 
@@ -359,7 +439,7 @@
                   <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;"></p>
                 </div>
                 <div class="column-15">
-                  <p style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
+                  <p id="c2_cip" style="text-align: left; font-size: 76%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: oblique;">input</p>
                 </div>
               </div>
               <div class="row"></div>
@@ -369,7 +449,7 @@
                   <p style="text-align: left; font-size: 120%; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Total a Pagar - Com Energia Solar</p>
                 </div>
                 <div class="column-26" style="border: rgb(0, 0, 0) solid 1px; margin-bottom: 10px; border-radius: 7px;">
-                  <p style="font-family: Arial, Helvetica, sans-serif;">output</p>
+                  <p id="c2_total" style="font-family: Arial, Helvetica, sans-serif;">output</p>
                 </div>
               </div>
 
@@ -389,9 +469,94 @@
   </div>
 
 </div>
+<script>
+function simular() {
+  var consumo = parseFloat(document.getElementById("consumo").value);
+  var cip = parseFloat(document.getElementById("cip").value);
+  var estado = document.getElementById("estado").value;
+  var fase = document.getElementById("fase").value;
 
+  verificaCamposVazios(consumo, cip, estado, fase);
 
+  var preco = 0.0;
+  var tarifa_energia = 0.0;
+  var imposto_estadual = 0.29143
+  var valor_consumo = 0.0;
+  var total = 0.0;
+  var consumo_c2 = 0.0;
 
+  if (estado =="Pa") {
+    tarifa_energia = 0.766; 
+  }
+  if (estado =="RJ") {
+    tarifa_energia = 0.703; 
+  }
+  if (estado =="Go") {
+    tarifa_energia = 0.548; 
+  }
+
+  if (fase =="mono") {
+    consumo_c2 = 30; 
+  }
+  if (fase =="bi") {
+    consumo_c2 = 50; 
+  }
+  if (fase =="tri") {
+    consumo_c2 = 100; 
+  }
+  //console.log(consumo+" "+" "+cip+" "+" "+estado+" "+" "+fase);
+
+  preco = (tarifa_energia)/(1-imposto_estadual);
+  preco = parseFloat(preco.toFixed(6));
+  valor_consumo = (consumo*preco);
+  valor_consumo = parseFloat(valor_consumo.toFixed(2));
+  total = valor_consumo + cip;
+  total = parseFloat(total.toFixed(2));
+  consumo = parseFloat(consumo.toFixed(2));
+  cip = parseFloat(cip.toFixed(2));
+
+  var consumo_valor_c2 = parseFloat((consumo_c2*preco).toFixed(2));
+  var total_c2 = consumo_c2 + cip;
+
+  document.getElementById("saida1").innerHTML = total;
+  document.getElementById("c1_consumo").innerHTML = consumo;
+  document.getElementById("c1_preco").innerHTML = preco;
+  document.getElementById("c1_valor_consumo").innerHTML = valor_consumo;
+  document.getElementById("c1_cip").innerHTML = cip;
+
+  document.getElementById("c2_consumo").innerHTML = consumo_c2;
+  document.getElementById("c2_preco").innerHTML = preco;
+  document.getElementById("c2_valor_consumo").innerHTML = consumo_valor_c2;
+  document.getElementById("c2_consumo_isento").innerHTML = consumo;
+  document.getElementById("c2_consumo_isento_preco").innerHTML = preco;
+  document.getElementById("c2_consumo_isento_valor").innerHTML = valor_consumo;
+  document.getElementById("c2_devolucao_geracao").innerHTML = (-1)*consumo;
+  document.getElementById("c2_devolucao_geracao_preco").innerHTML = (-1)*preco;
+  document.getElementById("c2_devolucao_geracao_valor").innerHTML = (-1)*valor_consumo;
+  document.getElementById("c2_cip").innerHTML = cip;
+  document.getElementById("c2_total").innerHTML = total_c2;
+}
+
+function focarElemento(idelemento){
+    document.getElementById(idelemento).focus();
+    document.getElementById(idelemento).contentEditable =true;
+}
+
+function verificaCamposVazios(aux_consumo, aux_cip, aux_estado, aux_fase) {
+  var array = [aux_consumo, aux_cip,aux_estado,aux_fase]
+  var ids = [document.getElementById("consumo").id,document.getElementById("cip").id,document.getElementById("estado").id,document.getElementById("fase").id]
+  for (let index = 0; index < array.length; index++) {
+    if (array[index]=="") {
+      aux_id = ids[index]; 
+      alert("Por favor, preencha o campo '"+aux_id+"'");
+      focarElemento(document.getElementById(aux_id).id);
+    }
+    
+    
+  }
+
+}
+</script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
