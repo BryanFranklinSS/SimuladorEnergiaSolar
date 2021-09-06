@@ -20,16 +20,73 @@
       <div class="row" style="padding: 10px;"> 
         <div class="container rounded" style="background-color: #1B67D4; box-shadow: 0 0 1em #1E1472; padding: 5px;">
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">1</div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">2</div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">3</div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">4</div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">
+              <label for="consumo" style="font-weight:bold;">Consumo:</label>
+              <br>
+              <input class="text-input" type="text" name="consumo" id="consumo" inputmode="numeric" oninput="limpaLetrasConsumo();" style="margin-left: 20px">
+              
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">
+              <label for="cip" style="font-weight:bold;">Cip-Ilum Pub Pref Munic:</label>
+              <br>
+              <input class="text-input" type="text" name="cip" id="cip" inputmode="numeric" oninput="limpaLetrasCip();" style="margin-left: 20px">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">
+              <label for="estado" style="font-weight:bold;">Estado:</label>
+              <br>
+              <select class="select-input" name="estado" id="estado" style="margin-left: 20px">
+                <option value="" selected>selecione o Estado</option>
+                <option value="Pa">Pará</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="Go">Goiás</option>
+              </select>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid">
+              <label for="estado" style="font-weight:bold;">Fase do seu sistema:</label>
+              <br>
+              <select class="select-input" name="fase" id="fase" style="margin-left: 20px">
+                <option value="" selected>selecione a fase</option>
+                <option value="mono">Monofásico</option>
+                <option value="bi">Bifásico</option>
+                <option value="tri">Trifásico</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding: 20px; text-align: center; border: 1px solid">
+              <button type="button" class="button" onclick="simular();">gerar simulação</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row" style=" border: 1px solid; padding: 5px;">
-        <div class="col-xs-6 col-6" style=" border: 1px solid;">fatura - cocessionária</div>
-        <div class="col-xs-6 col-6" style=" border: 1px solid;">fatura - energia solar</div>
+      <div class="row" style="  padding: 5px;">
+        <!--fatura concessionária-->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="row" style="background-color: rgb(231, 0, 0); border-top-left-radius: 14px; border-top-right-radius: 14px;">
+            <label for="concessionaria" style="font-weight: bold; color: #e6f0ff;">DEMONSTRATIVO DA FATURA DE ENERGIA - CONCESSIONÁRIA</label>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-6" style=" border: 1px solid; text-align: center; background-color: #e3f2ff">
+              <label for="t1" style="font-weight: bold; font-size: 90%;">Conta referente a:</label>
+              <br>
+              <label for="-" style="font-weight: bold; font-size: 90%;">-</label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-6" style="border: 1px solid; text-align: center; background-color: #e3f2ff">
+              <label for="t1" style="font-weight: bold; font-size: 90%;">Vencimento:</label>
+              <br>
+              <label for="-" style="font-weight: bold; font-size: 90%;">-</label>
+            </div>
+          </div>
+          <div class="row">3</div>
+          <div class="row">4</div>
+          <div class="row">5</div>
+          <div class="row">6</div>
+          <div class="row">7</div>
+        </div>
+        <!--fatura energia solar-->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style=" border: 1px solid;">fatura - energia solar
+        
+        </div>
       </div>
     </div>
   </div>
