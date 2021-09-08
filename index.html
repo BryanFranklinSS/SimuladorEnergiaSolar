@@ -164,7 +164,9 @@
                 <label for="t5" style="font-weight: 400; font-size: 76%;">Consumo</label>
               </div>
               <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-3" style="text-align: center; background-color: #e3f2ff">
-                <label for="t5" style="font-weight: 400; font-size: 76%;">1</label>
+                <div id="c1_consumo">
+                  <label for="t5" style="font-weight: 400; font-size: 76%;">1</label>
+                </div>
               </div>
               <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-3" style="text-align: center; background-color: #e3f2ff">
                 <label for="t5" style="font-weight: 400; font-size: 76%;">2</label>
@@ -681,23 +683,23 @@
     var consumo_valor_c2 = parseFloat((consumo_c2*preco).toFixed(2));
     var total_c2 = consumo_c2 + cip;
 
-    document.getElementById("saida1").innerHTML = total;
-    document.getElementById("c1_consumo").innerHTML = consumo;
-    document.getElementById("c1_preco").innerHTML = preco;
-    document.getElementById("c1_valor_consumo").innerHTML = valor_consumo;
-    document.getElementById("c1_cip").innerHTML = cip;
+    //document.getElementById("saida1").innerHTML = total;
+    document.getElementById("c1_consumo").innerHTML = "<label for='t5' style='font-weight: 400; font-size: 76%;'>"+consumo+"</label>";
+    //document.getElementById("c1_preco").innerHTML = preco;
+    //document.getElementById("c1_valor_consumo").innerHTML = valor_consumo;
+    //document.getElementById("c1_cip").innerHTML = cip;
 
-    document.getElementById("c2_consumo").innerHTML = consumo_c2;
-    document.getElementById("c2_preco").innerHTML = preco;
-    document.getElementById("c2_valor_consumo").innerHTML = consumo_valor_c2;
-    document.getElementById("c2_consumo_isento").innerHTML = consumo;
-    document.getElementById("c2_consumo_isento_preco").innerHTML = preco;
-    document.getElementById("c2_consumo_isento_valor").innerHTML = valor_consumo;
-    document.getElementById("c2_devolucao_geracao").innerHTML = (-1)*consumo;
-    document.getElementById("c2_devolucao_geracao_preco").innerHTML = (-1)*preco;
-    document.getElementById("c2_devolucao_geracao_valor").innerHTML = (-1)*valor_consumo;
-    document.getElementById("c2_cip").innerHTML = cip;
-    document.getElementById("c2_total").innerHTML = total_c2;
+    //document.getElementById("c2_consumo").innerHTML = consumo_c2;
+    //document.getElementById("c2_preco").innerHTML = preco;
+    //document.getElementById("c2_valor_consumo").innerHTML = consumo_valor_c2;
+    //document.getElementById("c2_consumo_isento").innerHTML = consumo;
+    //document.getElementById("c2_consumo_isento_preco").innerHTML = preco;
+    //document.getElementById("c2_consumo_isento_valor").innerHTML = valor_consumo;
+    //document.getElementById("c2_devolucao_geracao").innerHTML = (-1)*consumo;
+    //document.getElementById("c2_devolucao_geracao_preco").innerHTML = (-1)*preco;
+    //document.getElementById("c2_devolucao_geracao_valor").innerHTML = (-1)*valor_consumo;
+    //document.getElementById("c2_cip").innerHTML = cip;
+    //document.getElementById("c2_total").innerHTML = total_c2;
   }
 
   function focarElemento(idelemento){
